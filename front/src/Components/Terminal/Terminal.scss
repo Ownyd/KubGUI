@@ -1,0 +1,40 @@
+body {
+  background: #000;
+  color: #fff;
+  // padding: 10px;
+}
+
+#console {
+    font-family: 'Menlo';
+    font-size: 12px;
+    margin: 0;
+}
+
+#console p {
+  line-height: 1.4em;
+  margin: 0;
+}
+
+.line:before {
+  content: attr(data-user)" "attr(data-path)" ";
+  color: blue;
+}
+
+.line--active:after {
+  background: rgba(255, 255, 255, 0.3);
+  color: transparent;
+  content: ".";
+}
+
+.cursor {
+    background: rgba(255, 255, 255, 0.3);
+    color: transparent;
+    content: ".";
+}
+
+.green {
+  color: lime;
+}
+.red {
+  color: red;
+}

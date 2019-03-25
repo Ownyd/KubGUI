@@ -1,0 +1,32 @@
+.code_box {
+  background: #292828;
+  border: 2px solid white;
+  color: white;
+  page-break-inside: avoid;
+  font-family: monospace;
+  font-size: 12px;
+  line-height: 1.6;
+  width: 47%;
+  height: 96vh;
+  margin: 0;
+  overflow: auto;
+  padding: 1em 1.5em;
+  display: block;
+  word-wrap: break-word;
+}
+
+.code_box:hover {
+  background-color: black;
+}
+
+.code_line {
+  line-height: 2px;
+}
+
+#pod_log {
+  float:right;
+}
+
+#describe_pod {
+  float:left;
+}
