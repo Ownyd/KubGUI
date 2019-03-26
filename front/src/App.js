@@ -20,7 +20,7 @@ class App extends Component {
 
   changeContext(newCtx) {
     this.setState({ context: newCtx});
-    fetch(`http://localhost:8080/namespace/current?context=${newCtx}`)
+    fetch(`http://192.168.211.211:8080/namespace/current?context=${newCtx}`)
       .then(res => res.json())
       .then(data => this.setState({ namespace: data[0]}));
   }
@@ -35,10 +35,10 @@ class App extends Component {
 
 
   componentDidMount() {
-    fetch('http://localhost:8080/context/current')
+    fetch('http://192.168.211.211:8080/context/current')
       .then(res => res.json())
       .then(data => this.setState({ context: data[0]})).then(() => {
-        fetch(`http://localhost:8080/namespace/current?context=${this.state.context}`)
+        fetch(`http://192.168.211.211:8080/namespace/current?context=${this.state.context}`)
           .then(res => res.json())
           .then(data => this.setState({ namespace: data[0]}));
     });

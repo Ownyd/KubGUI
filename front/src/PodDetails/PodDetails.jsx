@@ -14,10 +14,10 @@ class ContextList extends Component {
   }
   componentDidMount() {
     const { match: { params } } = this.props;
-    fetch(`http://localhost:8080/pod/${params.name}?context=${params.context}&namespace=${params.namespace}`)
+    fetch(`http://192.168.211.211:8080/pod/${params.name}?context=${params.context}&namespace=${params.namespace}`)
       .then(res => res.json())
       .then(({ data, error }) => this.setState({ podDetails: data, podError: error }))
-    fetch(`http://localhost:8080/pod/logs/${params.name}?context=${params.context}&namespace=${params.namespace}`)
+    fetch(`http://192.168.211.211:8080/pod/logs/${params.name}?context=${params.context}&namespace=${params.namespace}`)
       .then(res => res.json())
       .then(({ data, error}) => this.setState({ podLogs: data, logError: error }))
   }

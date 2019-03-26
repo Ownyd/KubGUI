@@ -10,7 +10,7 @@ class Terminal extends React.Component {
       idx: null,
       data: [],
     };
-    this.bashSocket = new WebSocket("ws://localhost:8080", ["http", "https"]);
+    this.bashSocket = new WebSocket("ws://192.168.211.211:8080", ["http", "https"]);
     this.keyDown = this.keyDown.bind(this);
   }
 
@@ -58,7 +58,7 @@ class Terminal extends React.Component {
   sendCommand = (cmd)  =>{
     const { pid } = this.state;
 
-    fetch('http://localhost:8080/bashCmd', {
+    fetch('http://192.168.211.211:8080/bashCmd', {
       method: 'POST',
       body: JSON.stringify({ pid, cmd }),
       headers: { 'Content-Type': 'application/json' },

@@ -18,14 +18,14 @@ class NamespacesList extends Component {
   }
 
   componentDidMount() {
-    fetch('http://localhost:8080/namespaces')
+    fetch('http://192.168.211.211:8080/namespaces')
       .then(res => res.json())
       .then(data => this.setState({ namespaces: data}));
   }
 
   componentWillReceiveProps(nextProps) {
     const { context } = nextProps;
-    fetch(`http://localhost:8080/namespaces?context=${context}`)
+    fetch(`http://192.168.211.211:8080/namespaces?context=${context}`)
     .then(res => res.json())
     .then(data => this.setState({ namespaces: data}));
   }

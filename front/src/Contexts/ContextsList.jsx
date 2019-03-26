@@ -18,7 +18,7 @@ class ContextList extends Component {
   }
 
   componentDidMount() {
-    fetch('http://localhost:8080/contexts')
+    fetch('http://192.168.211.211:8080/contexts')
       .then(res => res.json())
       .then(data => this.setState({ contexts: data}));
   }

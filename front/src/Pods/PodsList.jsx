@@ -34,7 +34,7 @@ class PodsList extends Component {
 
 
   componentDidMount() {
-    fetch('http://localhost:8080/pods')
+    fetch('http://192.168.211.211:8080/pods')
       .then(res => res.json())
       .then(data => data.sort((vA, vB) => {
         return podsStatus[vA.status] - podsStatus[vB.status]
@@ -45,7 +45,7 @@ class PodsList extends Component {
   componentWillReceiveProps(nextProps) {
     const { context, namespace } = nextProps;
     if (!context || !namespace) return;
-    fetch(`http://localhost:8080/pods?context=${context}&namespace=${namespace}`)
+    fetch(`http://192.168.211.211:8080/pods?context=${context}&namespace=${namespace}`)
     .then(res => res.json())
     .then(data => data.sort((vA, vB) => {
       return podsStatus[vA.status] - podsStatus[vB.status]
