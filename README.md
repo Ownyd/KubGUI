@@ -19,6 +19,8 @@ I've implemented in-browser terminal which allows a total, instant SSH access
 Use the package manager [npm](http://npmjs.com) to install.
 
 IMPORTANT: You must have at least node V8. Your machine must support shell and have kubectl command line tool installed.
+In the frontend sources, you must replace http://192.168.211.211:8080 by the API ip and port you configured.
+
 
 ```bash
 npm --prefix ./api install ./api
